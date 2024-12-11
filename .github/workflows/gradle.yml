@@ -47,6 +47,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSHPASSWORD }}
       run:
+        mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         scp -P 8080 build/libs/*.jar root@49.236.136.132:/home/jarFiles

@@ -49,6 +49,13 @@ jobs:
       run: |
         sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no -P 8080 build/libs/*.jar root@49.236.136.132:/home/jarFiles
 
+      # Execute the shell script after copying JAR files
+    - name: Execute shell script on remote server
+      env:
+        SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
+      run: |
+        sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no -p 8080 root@49.236.136.132 'bash /home/shellScript/github_action_shell.sh'
+
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #

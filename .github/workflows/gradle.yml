@@ -49,7 +49,7 @@ jobs:
       run: |
         sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no -P 8080 build/libs/*.jar root@49.236.136.132:/home/jarFiles
 
-      # Execute the shell script after copying JAR files
+    # 쉘스크립트 파일 실행
     - name: Execute shell script on remote server
       env:
         SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}

@@ -1,0 +1,3 @@
+# application-green.yml (그린 환경)
+server:
+  port: 8081

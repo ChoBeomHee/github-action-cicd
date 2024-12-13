@@ -1,0 +1,3 @@
+# application-blue.yml (블루 환경)
+server:
+  port: 8080

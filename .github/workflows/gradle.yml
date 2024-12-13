@@ -52,7 +52,7 @@ jobs:
         env:
           SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
-          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no -p 8080 root@49.236.136.132 'bash /home/shellScript/github_action_shell.sh'
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no -p 8080 root@49.236.136.132 'bash /home/shellScript/deploy.sh'
 
   dependency-submission:
 
